@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=66.0.0", "wheel", "setuptools_scm[toml]>=6.0.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dragonsbreath"
+description = "Airbreathing engine modelling library."
+readme = "README.md"
+requires-python = ">=3.9"
+dynamic = ["version"]
+dependencies = [
+    "numpy",        # essential math library
+    "matplotlib",   # plotting
+    "scipy",        # optimization
+]
+
+[project.urls]
+homepage = "https://github.com/itchono/dragonsbreath"
+
+[tool.setuptools_scm]
+write_to = "dragonsbreath/_version.py"
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.setuptools]
+packages = ["dragonsbreath"]
